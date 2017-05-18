@@ -20,7 +20,7 @@ import org.usfirst.frc.team949.robot.subsystems.DriveTrain;
  */
 public class Robot extends IterativeRobot {
 
-	public static final DriveTrain exampleSubsystem = new DriveTrain();
+	public static final DriveTrain driveTrain = new DriveTrain();
 	public static OI oi;
 
 	Command autonomousCommand;
