@@ -49,4 +49,8 @@ public class OI {
 	public double getRotate() {
 		return stick.getTwist();
 	}
+	
+	public boolean getButtonPressed() {
+		return stick.getRawButton(2);
+	}
 }
