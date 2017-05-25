@@ -21,7 +21,7 @@ import org.usfirst.frc.team949.robot.subsystems.*;
 public class Robot extends IterativeRobot {
 
 	public static final DriveTrain driveTrain = new DriveTrain();
-	public static final Shooter shooter = new Shooter();
+	public static final shooterInit shooterInit = new shooterInit();
 	public static OI oi;
 
 	Command autonomousCommand;

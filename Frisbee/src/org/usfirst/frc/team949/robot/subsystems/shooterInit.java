@@ -9,12 +9,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class Shooter extends Subsystem {
+public class shooterInit extends Subsystem {
 
 	private Talon back = new Talon(RobotMap.back);
 	private Talon front = new Talon(RobotMap.front);
 	
-	public Shooter() {
+	public shooterInit() {
 		
 	}
 	
@@ -22,7 +22,7 @@ public class Shooter extends Subsystem {
 		setDefaultCommand(new Shoot());
 	}
 	
-	public void shoot(double s) {
+	public void shootInit(double s) {
 		back.set(s);
 		front.set(s);
 	}

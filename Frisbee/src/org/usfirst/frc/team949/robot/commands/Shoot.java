@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Shoot extends Command {
 
     public Shoot() {
-    	requires(Robot.shooter);
+    	requires(Robot.shooterInit);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -22,10 +22,10 @@ public class Shoot extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (Robot.oi.getButtonPressed()) {
-    		Robot.shooter.shoot(1.0);
+    		Robot.shooterInit.shootInit(1.0);
     	}
     	else {
-    		Robot.shooter.shoot(0);
+    		Robot.shooterInit.shootInit(0);
     	}
     }
 
