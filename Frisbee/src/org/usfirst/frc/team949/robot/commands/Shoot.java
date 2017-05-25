@@ -4,9 +4,6 @@ import org.usfirst.frc.team949.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
 public class Shoot extends Command {
 
     public Shoot() {
@@ -18,15 +15,18 @@ public class Shoot extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     }
-
-    // Called repeatedly when this Command is scheduled to run
-    protected void execute() {
+    
+    public void start() {
     	if (Robot.oi.getShootButtonPressed()) {
     		Robot.shootInit.shootOnOff(true);
     	}
     	else {
     		Robot.shootInit.shootOnOff(false);
     	}
+    }
+
+    // Called repeatedly when this Command is scheduled to run
+    protected void execute() {
     }
 
     // Make this return true when this Command no longer needs to run execute()
