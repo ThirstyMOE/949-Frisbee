@@ -4,36 +4,35 @@ import org.usfirst.frc.team949.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-/**
- *
- */
+public class Shoot extends Command {
 
-public class DriveWithJoyStick extends Command {
-
-	private double speedModifier;
-	private final double kFullSpeed = 0.8;
-	
-	public DriveWithJoyStick() {
-		requires(Robot.driveTrain);
+    public Shoot() {
+    	requires(Robot.shootInit);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-		speedModifier = kFullSpeed;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
     }
+    
+    public void start() {
+    	if (Robot.oi.getShootButtonPressed()) {
+    		Robot.shootInit.shootOnOff(true);
+    	}
+    	else {
+    		Robot.shootInit.shootOnOff(false);
+    	}
+    }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.drive(Robot.oi.getX(), Robot.oi.getY(), Robot.oi.getRotate());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
     }
-    
 
     // Called once after isFinished returns true
     protected void end() {

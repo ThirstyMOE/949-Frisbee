@@ -7,17 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
+public class KickerExtend extends Command {
 
-public class DriveWithJoyStick extends Command {
-
-	private double speedModifier;
-	private final double kFullSpeed = 0.8;
-	
-	public DriveWithJoyStick() {
-		requires(Robot.driveTrain);
+    public KickerExtend() {
+    	requires(Robot.kicker);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-		speedModifier = kFullSpeed;
     }
 
     // Called just before this Command runs the first time
@@ -26,14 +21,12 @@ public class DriveWithJoyStick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.drive(Robot.oi.getX(), Robot.oi.getY(), Robot.oi.getRotate());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
     }
-    
 
     // Called once after isFinished returns true
     protected void end() {
